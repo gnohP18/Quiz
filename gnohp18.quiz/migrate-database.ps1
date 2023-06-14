@@ -1,0 +1,1 @@
+dotnet run --project gnohp18.quiz --migrate-database
