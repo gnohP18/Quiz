@@ -14,6 +14,7 @@ namespace gnohp18.quiz.Players
             CreateUpdatePlayerDto,
             CreateUpdatePlayerDto>
     {  
-    
+        Task<List<QuestionAnswerDto>> PlayGameWithTypeOfQuestionAsync(Guid playerId, Guid typeOfQuestionId);
+        Task PlayerAnswerValidateAsync(Guid playerId, Guid questionId, Guid answerId);
     }
 }

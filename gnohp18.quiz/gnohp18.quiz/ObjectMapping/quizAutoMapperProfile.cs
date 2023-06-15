@@ -21,9 +21,12 @@ public class quizAutoMapperProfile : Profile
 
         CreateMap<CreateUpdateResultDto, Result>();
         CreateMap<Result, ResultDto>();
+        CreateMap<ResultDto, Result>();
 
         CreateMap<CreateUpdatePlayerDto, Player>();
+        CreateMap<PlayerResultDto, Result>();
         CreateMap<Player, PlayerDto>();
+        CreateMap<Answer, PlayerAnswerDto>();
 
         CreateMap<CreateUpdateQuestionDto, Question>();
         CreateMap<Question, QuestionDto>();
