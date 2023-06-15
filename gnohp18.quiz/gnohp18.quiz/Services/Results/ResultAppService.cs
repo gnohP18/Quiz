@@ -19,5 +19,20 @@ namespace gnohp18.quiz.Results
         {
             _repository = repository;
         }
+
+        public async Task<ResultDto> FeedbackAsync(Guid resultId, string feedback)
+        {
+            var result = await _repository.FindAsync(resultId);
+            result.Feedback = feedback;
+            await _repository.UpdateAsync(result);
+
+            return ObjectMapper.Map<Result, ResultDto>(result);
+        }
+
+        public async Task<List<ResultDto>> GetResultByPlayerIdAsync(Guid playerId)
+        {
+            var listResult = await _repository.GetListAsync(x => x.PlayerId == playerId);
+            return ObjectMapper.Map<List<Result>, List<ResultDto>>(listResult);
+        }
     }
 }

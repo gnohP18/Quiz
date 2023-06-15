@@ -14,5 +14,7 @@ namespace gnohp18.quiz.Results
             CreateUpdateResultDto,
             CreateUpdateResultDto>
     {  
+        Task<List<ResultDto>> GetResultByPlayerIdAsync (Guid playerId);
+        Task<ResultDto> FeedbackAsync(Guid resultId, string feedback);
     }
 }
